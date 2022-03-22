@@ -38,7 +38,7 @@ namespace Physics_lab_1
             this.button_calculate_cylinder = new System.Windows.Forms.Button();
             this.button_calculate_cylindrical_ring = new System.Windows.Forms.Button();
             this.button_calculate_ball = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.label_fin_ro = new System.Windows.Forms.Label();
             this.textBox1_col1 = new System.Windows.Forms.TextBox();
             this.textBox2_col1 = new System.Windows.Forms.TextBox();
             this.textBox3_col1 = new System.Windows.Forms.TextBox();
@@ -67,7 +67,7 @@ namespace Physics_lab_1
             this.label_ro_del1 = new System.Windows.Forms.Label();
             this.label_ro_del2 = new System.Windows.Forms.Label();
             this.label_ro_del3 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.label_fin_E = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label1_aver = new System.Windows.Forms.Label();
             this.label2_aver = new System.Windows.Forms.Label();
@@ -77,14 +77,16 @@ namespace Physics_lab_1
             this.label_ro_del_aver = new System.Windows.Forms.Label();
             this.label_tabel = new System.Windows.Forms.Label();
             this.button_calculate_parallelepiped = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBox_v = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // button_clear
             // 
             this.button_clear.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_clear.Location = new System.Drawing.Point(187, 370);
+            this.button_clear.Location = new System.Drawing.Point(913, 12);
             this.button_clear.Name = "button_clear";
-            this.button_clear.Size = new System.Drawing.Size(66, 66);
+            this.button_clear.Size = new System.Drawing.Size(78, 78);
             this.button_clear.TabIndex = 7;
             this.button_clear.Text = "AC";
             this.button_clear.UseVisualStyleBackColor = true;
@@ -93,9 +95,9 @@ namespace Physics_lab_1
             // button_exit
             // 
             this.button_exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_exit.Location = new System.Drawing.Point(12, 372);
+            this.button_exit.Location = new System.Drawing.Point(738, 12);
             this.button_exit.Name = "button_exit";
-            this.button_exit.Size = new System.Drawing.Size(169, 66);
+            this.button_exit.Size = new System.Drawing.Size(169, 78);
             this.button_exit.TabIndex = 5;
             this.button_exit.Text = "Вихід";
             this.button_exit.UseVisualStyleBackColor = true;
@@ -154,6 +156,7 @@ namespace Physics_lab_1
             this.button_calculate_cylinder.TabIndex = 14;
             this.button_calculate_cylinder.Text = "Обчислити";
             this.button_calculate_cylinder.UseVisualStyleBackColor = true;
+            this.button_calculate_cylinder.Click += new System.EventHandler(this.button_calculate_cylinder_Click);
             // 
             // button_calculate_cylindrical_ring
             // 
@@ -164,6 +167,7 @@ namespace Physics_lab_1
             this.button_calculate_cylindrical_ring.TabIndex = 15;
             this.button_calculate_cylindrical_ring.Text = "Обчислити";
             this.button_calculate_cylindrical_ring.UseVisualStyleBackColor = true;
+            this.button_calculate_cylindrical_ring.Click += new System.EventHandler(this.button_calculate_cylindrical_ring_Click);
             // 
             // button_calculate_ball
             // 
@@ -174,98 +178,100 @@ namespace Physics_lab_1
             this.button_calculate_ball.TabIndex = 16;
             this.button_calculate_ball.Text = "Обчислити";
             this.button_calculate_ball.UseVisualStyleBackColor = true;
+            this.button_calculate_ball.Click += new System.EventHandler(this.button_calculate_ball_Click);
             // 
-            // label1
+            // label_fin_ro
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(512, 213);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 17;
-            this.label1.Text = "label1";
+            this.label_fin_ro.AutoSize = true;
+            this.label_fin_ro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_fin_ro.Location = new System.Drawing.Point(86, 353);
+            this.label_fin_ro.Name = "label_fin_ro";
+            this.label_fin_ro.Size = new System.Drawing.Size(46, 20);
+            this.label_fin_ro.TabIndex = 17;
+            this.label_fin_ro.Text = "value";
             // 
             // textBox1_col1
             // 
             this.textBox1_col1.Location = new System.Drawing.Point(90, 222);
             this.textBox1_col1.Name = "textBox1_col1";
-            this.textBox1_col1.Size = new System.Drawing.Size(55, 20);
+            this.textBox1_col1.Size = new System.Drawing.Size(160, 20);
             this.textBox1_col1.TabIndex = 18;
             // 
             // textBox2_col1
             // 
             this.textBox2_col1.Location = new System.Drawing.Point(90, 248);
             this.textBox2_col1.Name = "textBox2_col1";
-            this.textBox2_col1.Size = new System.Drawing.Size(55, 20);
+            this.textBox2_col1.Size = new System.Drawing.Size(160, 20);
             this.textBox2_col1.TabIndex = 19;
             // 
             // textBox3_col1
             // 
             this.textBox3_col1.Location = new System.Drawing.Point(90, 274);
             this.textBox3_col1.Name = "textBox3_col1";
-            this.textBox3_col1.Size = new System.Drawing.Size(55, 20);
+            this.textBox3_col1.Size = new System.Drawing.Size(160, 20);
             this.textBox3_col1.TabIndex = 20;
             // 
             // textBox3_col2
             // 
-            this.textBox3_col2.Location = new System.Drawing.Point(151, 274);
+            this.textBox3_col2.Location = new System.Drawing.Point(258, 274);
             this.textBox3_col2.Name = "textBox3_col2";
-            this.textBox3_col2.Size = new System.Drawing.Size(55, 20);
+            this.textBox3_col2.Size = new System.Drawing.Size(160, 20);
             this.textBox3_col2.TabIndex = 23;
             // 
             // textBox2_col2
             // 
-            this.textBox2_col2.Location = new System.Drawing.Point(151, 248);
+            this.textBox2_col2.Location = new System.Drawing.Point(258, 248);
             this.textBox2_col2.Name = "textBox2_col2";
-            this.textBox2_col2.Size = new System.Drawing.Size(55, 20);
+            this.textBox2_col2.Size = new System.Drawing.Size(160, 20);
             this.textBox2_col2.TabIndex = 22;
             // 
             // textBox1_col2
             // 
-            this.textBox1_col2.Location = new System.Drawing.Point(151, 222);
+            this.textBox1_col2.Location = new System.Drawing.Point(259, 222);
             this.textBox1_col2.Name = "textBox1_col2";
-            this.textBox1_col2.Size = new System.Drawing.Size(55, 20);
+            this.textBox1_col2.Size = new System.Drawing.Size(160, 20);
             this.textBox1_col2.TabIndex = 21;
             // 
             // textBox3_col3
             // 
-            this.textBox3_col3.Location = new System.Drawing.Point(212, 274);
+            this.textBox3_col3.Location = new System.Drawing.Point(427, 274);
             this.textBox3_col3.Name = "textBox3_col3";
-            this.textBox3_col3.Size = new System.Drawing.Size(55, 20);
+            this.textBox3_col3.Size = new System.Drawing.Size(160, 20);
             this.textBox3_col3.TabIndex = 26;
             // 
             // textBox2_col3
             // 
-            this.textBox2_col3.Location = new System.Drawing.Point(212, 248);
+            this.textBox2_col3.Location = new System.Drawing.Point(427, 248);
             this.textBox2_col3.Name = "textBox2_col3";
-            this.textBox2_col3.Size = new System.Drawing.Size(55, 20);
+            this.textBox2_col3.Size = new System.Drawing.Size(160, 20);
             this.textBox2_col3.TabIndex = 25;
             // 
             // textBox1_col3
             // 
-            this.textBox1_col3.Location = new System.Drawing.Point(212, 222);
+            this.textBox1_col3.Location = new System.Drawing.Point(427, 222);
             this.textBox1_col3.Name = "textBox1_col3";
-            this.textBox1_col3.Size = new System.Drawing.Size(55, 20);
+            this.textBox1_col3.Size = new System.Drawing.Size(160, 20);
             this.textBox1_col3.TabIndex = 24;
             // 
             // textBox3_col4
             // 
-            this.textBox3_col4.Location = new System.Drawing.Point(273, 274);
+            this.textBox3_col4.Location = new System.Drawing.Point(593, 274);
             this.textBox3_col4.Name = "textBox3_col4";
-            this.textBox3_col4.Size = new System.Drawing.Size(55, 20);
+            this.textBox3_col4.Size = new System.Drawing.Size(160, 20);
             this.textBox3_col4.TabIndex = 29;
             // 
             // textBox2_col4
             // 
-            this.textBox2_col4.Location = new System.Drawing.Point(273, 248);
+            this.textBox2_col4.Location = new System.Drawing.Point(593, 248);
             this.textBox2_col4.Name = "textBox2_col4";
-            this.textBox2_col4.Size = new System.Drawing.Size(55, 20);
+            this.textBox2_col4.Size = new System.Drawing.Size(160, 20);
             this.textBox2_col4.TabIndex = 28;
             // 
             // textBox1_col4
             // 
-            this.textBox1_col4.Location = new System.Drawing.Point(273, 222);
+            this.textBox1_col4.Location = new System.Drawing.Point(593, 222);
             this.textBox1_col4.Name = "textBox1_col4";
-            this.textBox1_col4.Size = new System.Drawing.Size(55, 20);
+            this.textBox1_col4.Size = new System.Drawing.Size(160, 20);
             this.textBox1_col4.TabIndex = 27;
             // 
             // label2
@@ -322,7 +328,7 @@ namespace Physics_lab_1
             // 
             this.label_col2.AutoSize = true;
             this.label_col2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_col2.Location = new System.Drawing.Point(147, 194);
+            this.label_col2.Location = new System.Drawing.Point(254, 194);
             this.label_col2.Name = "label_col2";
             this.label_col2.Size = new System.Drawing.Size(46, 20);
             this.label_col2.TabIndex = 36;
@@ -332,7 +338,7 @@ namespace Physics_lab_1
             // 
             this.label_col3.AutoSize = true;
             this.label_col3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_col3.Location = new System.Drawing.Point(208, 194);
+            this.label_col3.Location = new System.Drawing.Point(423, 192);
             this.label_col3.Name = "label_col3";
             this.label_col3.Size = new System.Drawing.Size(46, 20);
             this.label_col3.TabIndex = 37;
@@ -342,7 +348,7 @@ namespace Physics_lab_1
             // 
             this.label_col4.AutoSize = true;
             this.label_col4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_col4.Location = new System.Drawing.Point(269, 194);
+            this.label_col4.Location = new System.Drawing.Point(589, 194);
             this.label_col4.Name = "label_col4";
             this.label_col4.Size = new System.Drawing.Size(46, 20);
             this.label_col4.TabIndex = 38;
@@ -352,7 +358,7 @@ namespace Physics_lab_1
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label11.Location = new System.Drawing.Point(335, 194);
+            this.label11.Location = new System.Drawing.Point(785, 192);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(22, 20);
             this.label11.TabIndex = 39;
@@ -362,7 +368,7 @@ namespace Physics_lab_1
             // 
             this.label_ro1.AutoSize = true;
             this.label_ro1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_ro1.Location = new System.Drawing.Point(334, 222);
+            this.label_ro1.Location = new System.Drawing.Point(784, 220);
             this.label_ro1.Name = "label_ro1";
             this.label_ro1.Size = new System.Drawing.Size(46, 20);
             this.label_ro1.TabIndex = 40;
@@ -372,7 +378,7 @@ namespace Physics_lab_1
             // 
             this.label_ro2.AutoSize = true;
             this.label_ro2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_ro2.Location = new System.Drawing.Point(335, 248);
+            this.label_ro2.Location = new System.Drawing.Point(785, 246);
             this.label_ro2.Name = "label_ro2";
             this.label_ro2.Size = new System.Drawing.Size(46, 20);
             this.label_ro2.TabIndex = 41;
@@ -382,7 +388,7 @@ namespace Physics_lab_1
             // 
             this.label_ro3.AutoSize = true;
             this.label_ro3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_ro3.Location = new System.Drawing.Point(335, 274);
+            this.label_ro3.Location = new System.Drawing.Point(785, 272);
             this.label_ro3.Name = "label_ro3";
             this.label_ro3.Size = new System.Drawing.Size(46, 20);
             this.label_ro3.TabIndex = 42;
@@ -392,7 +398,7 @@ namespace Physics_lab_1
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label15.Location = new System.Drawing.Point(400, 194);
+            this.label15.Location = new System.Drawing.Point(979, 192);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(29, 20);
             this.label15.TabIndex = 43;
@@ -402,7 +408,7 @@ namespace Physics_lab_1
             // 
             this.label_ro_del1.AutoSize = true;
             this.label_ro_del1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_ro_del1.Location = new System.Drawing.Point(400, 222);
+            this.label_ro_del1.Location = new System.Drawing.Point(979, 220);
             this.label_ro_del1.Name = "label_ro_del1";
             this.label_ro_del1.Size = new System.Drawing.Size(46, 20);
             this.label_ro_del1.TabIndex = 44;
@@ -412,7 +418,7 @@ namespace Physics_lab_1
             // 
             this.label_ro_del2.AutoSize = true;
             this.label_ro_del2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_ro_del2.Location = new System.Drawing.Point(401, 248);
+            this.label_ro_del2.Location = new System.Drawing.Point(980, 246);
             this.label_ro_del2.Name = "label_ro_del2";
             this.label_ro_del2.Size = new System.Drawing.Size(46, 20);
             this.label_ro_del2.TabIndex = 45;
@@ -422,20 +428,21 @@ namespace Physics_lab_1
             // 
             this.label_ro_del3.AutoSize = true;
             this.label_ro_del3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_ro_del3.Location = new System.Drawing.Point(401, 274);
+            this.label_ro_del3.Location = new System.Drawing.Point(980, 272);
             this.label_ro_del3.Name = "label_ro_del3";
             this.label_ro_del3.Size = new System.Drawing.Size(46, 20);
             this.label_ro_del3.TabIndex = 46;
             this.label_ro_del3.Text = "value";
             // 
-            // label6
+            // label_fin_E
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(512, 229);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(35, 13);
-            this.label6.TabIndex = 47;
-            this.label6.Text = "label6";
+            this.label_fin_E.AutoSize = true;
+            this.label_fin_E.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_fin_E.Location = new System.Drawing.Point(86, 397);
+            this.label_fin_E.Name = "label_fin_E";
+            this.label_fin_E.Size = new System.Drawing.Size(46, 20);
+            this.label_fin_E.TabIndex = 47;
+            this.label_fin_E.Text = "value";
             // 
             // label7
             // 
@@ -461,7 +468,7 @@ namespace Physics_lab_1
             // 
             this.label2_aver.AutoSize = true;
             this.label2_aver.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2_aver.Location = new System.Drawing.Point(147, 305);
+            this.label2_aver.Location = new System.Drawing.Point(254, 305);
             this.label2_aver.Name = "label2_aver";
             this.label2_aver.Size = new System.Drawing.Size(46, 20);
             this.label2_aver.TabIndex = 50;
@@ -471,7 +478,7 @@ namespace Physics_lab_1
             // 
             this.label3_aver.AutoSize = true;
             this.label3_aver.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3_aver.Location = new System.Drawing.Point(208, 305);
+            this.label3_aver.Location = new System.Drawing.Point(423, 303);
             this.label3_aver.Name = "label3_aver";
             this.label3_aver.Size = new System.Drawing.Size(46, 20);
             this.label3_aver.TabIndex = 51;
@@ -481,7 +488,7 @@ namespace Physics_lab_1
             // 
             this.label4_aver.AutoSize = true;
             this.label4_aver.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4_aver.Location = new System.Drawing.Point(269, 305);
+            this.label4_aver.Location = new System.Drawing.Point(589, 305);
             this.label4_aver.Name = "label4_aver";
             this.label4_aver.Size = new System.Drawing.Size(46, 20);
             this.label4_aver.TabIndex = 52;
@@ -491,7 +498,7 @@ namespace Physics_lab_1
             // 
             this.label_ro_aver.AutoSize = true;
             this.label_ro_aver.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_ro_aver.Location = new System.Drawing.Point(335, 305);
+            this.label_ro_aver.Location = new System.Drawing.Point(785, 303);
             this.label_ro_aver.Name = "label_ro_aver";
             this.label_ro_aver.Size = new System.Drawing.Size(46, 20);
             this.label_ro_aver.TabIndex = 53;
@@ -501,7 +508,7 @@ namespace Physics_lab_1
             // 
             this.label_ro_del_aver.AutoSize = true;
             this.label_ro_del_aver.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_ro_del_aver.Location = new System.Drawing.Point(401, 305);
+            this.label_ro_del_aver.Location = new System.Drawing.Point(980, 303);
             this.label_ro_del_aver.Name = "label_ro_del_aver";
             this.label_ro_del_aver.Size = new System.Drawing.Size(46, 20);
             this.label_ro_del_aver.TabIndex = 54;
@@ -528,11 +535,30 @@ namespace Physics_lab_1
             this.button_calculate_parallelepiped.UseVisualStyleBackColor = true;
             this.button_calculate_parallelepiped.Click += new System.EventHandler(this.button_calculate_parallelepiped_Click);
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label8.Location = new System.Drawing.Point(34, 138);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(68, 20);
+            this.label8.TabIndex = 57;
+            this.label8.Text = "Варіант";
+            // 
+            // textBox_v
+            // 
+            this.textBox_v.Location = new System.Drawing.Point(108, 138);
+            this.textBox_v.Name = "textBox_v";
+            this.textBox_v.Size = new System.Drawing.Size(52, 20);
+            this.textBox_v.TabIndex = 58;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1095, 450);
+            this.Controls.Add(this.textBox_v);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.button_calculate_parallelepiped);
             this.Controls.Add(this.label_tabel);
             this.Controls.Add(this.label_ro_del_aver);
@@ -542,7 +568,7 @@ namespace Physics_lab_1
             this.Controls.Add(this.label2_aver);
             this.Controls.Add(this.label1_aver);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label_fin_E);
             this.Controls.Add(this.label_ro_del3);
             this.Controls.Add(this.label_ro_del2);
             this.Controls.Add(this.label_ro_del1);
@@ -571,7 +597,7 @@ namespace Physics_lab_1
             this.Controls.Add(this.textBox3_col1);
             this.Controls.Add(this.textBox2_col1);
             this.Controls.Add(this.textBox1_col1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label_fin_ro);
             this.Controls.Add(this.button_calculate_ball);
             this.Controls.Add(this.button_calculate_cylindrical_ring);
             this.Controls.Add(this.button_calculate_cylinder);
@@ -600,7 +626,7 @@ namespace Physics_lab_1
         private System.Windows.Forms.Button button_calculate_cylinder;
         private System.Windows.Forms.Button button_calculate_cylindrical_ring;
         private System.Windows.Forms.Button button_calculate_ball;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label_fin_ro;
         private System.Windows.Forms.TextBox textBox1_col1;
         private System.Windows.Forms.TextBox textBox2_col1;
         private System.Windows.Forms.TextBox textBox3_col1;
@@ -629,7 +655,7 @@ namespace Physics_lab_1
         private System.Windows.Forms.Label label_ro_del1;
         private System.Windows.Forms.Label label_ro_del2;
         private System.Windows.Forms.Label label_ro_del3;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label_fin_E;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label1_aver;
         private System.Windows.Forms.Label label2_aver;
@@ -639,6 +665,8 @@ namespace Physics_lab_1
         private System.Windows.Forms.Label label_ro_del_aver;
         private System.Windows.Forms.Label label_tabel;
         private System.Windows.Forms.Button button_calculate_parallelepiped;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox textBox_v;
     }
 }
 
