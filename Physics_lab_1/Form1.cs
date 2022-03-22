@@ -80,6 +80,7 @@ namespace Physics_lab_1
             label_col2.Text = "h,";
             label_col3.Text = "m,";
             label_col4.Text = "";
+            label4_aver.Text = "";
         }
 
         private void button_cylindrical_ring_Click(object sender, EventArgs e)
@@ -98,6 +99,8 @@ namespace Physics_lab_1
             label_col2.Text = "m,";
             label_col3.Text = "";
             label_col4.Text = "";
+            label3_aver.Text = "";
+            label4_aver.Text = "";
         }
 
         private void button_calculate_parallelepiped_Click(object sender, EventArgs e)
